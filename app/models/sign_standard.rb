@@ -78,7 +78,8 @@ class SignStandard < ActiveRecord::Base
     :superseded_by_id,
     :voided_on_date,
     :new_comment,
-    :replace_smo
+    :replace_smo,
+    :prs_indicator_type_id
   ]
 
   SEARCHABLE_FIELDS = [
@@ -120,7 +121,7 @@ class SignStandard < ActiveRecord::Base
     if smo_code == 'SPECIAL'
       # Can't delete the special code
       false
-   elsif signs.present?
+   elsif signs.exists?
      # Can't delete if there are assets using the code
      false
    else
