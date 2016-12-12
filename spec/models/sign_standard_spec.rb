@@ -75,7 +75,8 @@ RSpec.describe SignStandard, :type => :model do
       :superseded_by_id,
       :voided_on_date,
       :new_comment,
-      :replace_smo
+      :replace_smo,
+      :prs_indicator_type_id
     ])
   end
   describe '#active' do
