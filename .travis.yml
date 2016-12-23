@@ -10,6 +10,7 @@ addons:
   code_climate:
     repo_token: ef1a90c2630dc2980f6dc23f2d4db795b5dcf4317617ba2474a60fb9afbf228d
 before_script:
+- bundle update transam_core transam_spatial
 - cp spec/dummy/config/database.travis.yml spec/dummy/config/database.yml
 script:
 - bundle exec rake app:transam_sign:prepare_rspec

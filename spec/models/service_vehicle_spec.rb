@@ -155,6 +155,7 @@ RSpec.describe ServiceVehicle, :type => :model do
   #------------------------------------------------------------------------------
 
   it 'has a crew' do
+    test_service_vehicle = create(:service_vehicle_with_crew)
     test_member = create(:crew_member, :supervisor => false, :service_vehicle => test_service_vehicle)
     expect(test_service_vehicle.crew).to include(test_member.user)
   end
