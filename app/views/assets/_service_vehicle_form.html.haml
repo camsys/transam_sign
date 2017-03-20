@@ -62,7 +62,10 @@
         = f.input :expected_useful_life, :as => :hidden, :value => 0
 
     .col-md-12
-      = f.button :submit, :class => 'btn btn-primary'
+      - if @asset.persisted?
+        = f.button :submit, "Update Service Vehicle", :class => 'btn btn-primary'
+      - else
+        = f.button :submit, "Create Service Vehicle", :class => 'btn btn-primary'
 
 :javascript
 
