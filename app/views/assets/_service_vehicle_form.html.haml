@@ -12,6 +12,9 @@
     = f.input :asset_type_id, :as => :hidden
     = f.input :asset_subtype_id, :as => :hidden
     = f.input :assigned_to_organization_id, :as => :hidden, :input_html => { :value => @asset.organization_id }
+    - if @asset.new_record?
+      - @asset.service_status_type = ServiceStatusType.find_by_code("I")
+      = f.input :service_status_type_id, :as => :hidden 
 
     .col-md-4
       = dialog_tag('Vehicle Type', {:icon => 'fa fa-refresh', :class => "form_part"}) do
