@@ -188,6 +188,6 @@ class SignStandard < ActiveRecord::Base
   end
 
   def remove_spaces_from_smo_code
-    self.smo_code = self.smo_code.gsub(' ', '').strip
+    self.smo_code = self.smo_code.gsub(' ', '').strip if self.smo_code
   end
 end
