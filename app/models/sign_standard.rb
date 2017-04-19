@@ -57,6 +57,8 @@ class SignStandard < ActiveRecord::Base
   # ----------------------------------------------------
   # Validations
   # ----------------------------------------------------
+  before_validation :remove_spaces_from_smo_code
+  
   validates   :smo_code,            :length => { :in => 1..16 }, :uniqueness => true
   validates   :size_description,    :length => { :in => 1..16 }
   validates   :sign_description,    :length => { :in => 1..254 }
@@ -185,4 +187,7 @@ class SignStandard < ActiveRecord::Base
     self.imagepath ||= Rails.application.config.missing_sign_image
   end
 
+  def remove_spaces_from_smo_code
+    self.smo_code = self.smo_code.gsub(' ', '').strip
+  end
 end
