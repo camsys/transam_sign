@@ -36,7 +36,7 @@ RSpec.describe ServiceLifeAgeAndMileage, :type => :calculator do
     it 'calculates if by age and mileage are equal' do
       @test_asset.update!(:purchased_new => false)
       @mileage_update_event.current_mileage = @test_asset.policy_analyzer.get_min_service_life_miles + 100
-      @mileage_update_event.event_date = test_calculator.send(:by_age,@test_asset)
+      @mileage_update_event.event_date = Date.new(test_calculator.send(:by_age,@test_asset), @test_asset.in_service_date.month, @test_asset.in_service_date.day)
       @mileage_update_event.save
 
       service_life = test_calculator.calculate(@test_asset)
