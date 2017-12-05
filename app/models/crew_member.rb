@@ -32,8 +32,8 @@ class CrewMember < ActiveRecord::Base
   #-----------------------------------------------------------------------------
   # Validations
   #-----------------------------------------------------------------------------
-  validates     :service_vehicle, :presence => :true
-  validates     :user,            :presence => :true
+  validates     :service_vehicle, :presence => true
+  validates     :user,            :presence => true
 
   #-----------------------------------------------------------------------------
   # Constants

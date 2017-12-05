@@ -39,15 +39,15 @@ class ServiceVehicle < Asset
   #-----------------------------------------------------------------------------
   # Service Vehicle Physical Characteristics
   #-----------------------------------------------------------------------------
-  validates :license_plate,               :presence => :true
-  validates :seating_capacity,            :presence => :true, :numericality => {:only_integer => :true, :greater_than_or_equal_to => 1}
-  validates :fuel_type,                   :presence => :true
-  validates :serial_number,               :presence => :true
-  validates :gross_vehicle_weight,        :allow_nil => true, :numericality => {:only_integer => :true,   :greater_than_or_equal_to => 0}
-  validates :manufacturer_id,             :presence => :true
-  validates :manufacturer_model,          :presence => :true
-  validates :title_owner_organization_id, :presence => :true
-  validates :vehicle_length,              :presence => :true, :numericality => {:only_integer => :true, :greater_than => 0}
+  validates :license_plate,               :presence => true
+  validates :seating_capacity,            :presence => true, :numericality => {:only_integer => true, :greater_than_or_equal_to => 1}
+  validates :fuel_type,                   :presence => true
+  validates :serial_number,               :presence => true
+  validates :gross_vehicle_weight,        :allow_nil => true, :numericality => {:only_integer => true,   :greater_than_or_equal_to => 0}
+  validates :manufacturer_id,             :presence => true
+  validates :manufacturer_model,          :presence => true
+  validates :title_owner_organization_id, :presence => true
+  validates :vehicle_length,              :presence => true, :numericality => {:only_integer => true, :greater_than => 0}
 
   #-----------------------------------------------------------------------------
   # Scopes
