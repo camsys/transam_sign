@@ -33,7 +33,7 @@ class ServiceLifeAgeAndMileage < ServiceLifeCalculator
       # effective
       min_service_life_miles = asset.policy_analyzer.get_min_service_life_miles
       if min_service_life_miles
-        events = asset.mileage_updates(true)
+        events = asset.mileage_updates.reload
         Rails.logger.debug "Found #{events.count} events."
         Rails.logger.debug "min_service_life_miles = #{min_service_life_miles}."
         events.each do |event|

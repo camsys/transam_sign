@@ -18,14 +18,13 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
 
-  s.add_dependency 'rails', '~> 4.2.7.1'
+  s.add_dependency 'rails', '~> 5.2'
 
   s.add_development_dependency "rspec-rails"
-  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency "factory_bot_rails"
   s.add_development_dependency "database_cleaner"
   s.add_development_dependency "mysql2"
   s.add_development_dependency "shoulda-matchers"
-  s.add_development_dependency "cucumber-rails"
   s.add_development_dependency "codacy-coverage"
   s.add_development_dependency 'simplecov'
 end

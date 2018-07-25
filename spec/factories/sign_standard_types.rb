@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
 
   factory :sign_standard_type do
     name "Test Sign Standard Type"
