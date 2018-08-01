@@ -37,7 +37,7 @@
         = f.input :title_number, :label => "Title Number", :input_html => { :maxlength => 32 }
         - maspeth_org = Organization.find_by_short_name('MASPETH')
         - title_owner_orgs = (maspeth_org ? [maspeth_org] : current_user.organizations)
-        = f.association :title_owner, :collection => title_owner_orgs, :include_blank => title_owner_orgs.size  > 1, :label => "Title Owner", :required => true
+        = f.association :title_owner, :collection => title_owner_orgs, :include_blank => title_owner_orgs.size  > 1, :label => "Title Owner", :required => title_owner_orgs.size  > 1
 
         = f.input :purchase_cost, :wrapper=> :vertical_prepend, :label => "Purchase Cost" do
           %span.input-group-addon
